@@ -11,10 +11,9 @@ import cors from "cors";
 import morgan from "morgan";
 import helmet from "helmet";
 import {rateLimit} from "express-rate-limit";
-import { error } from "node:console";
 const bootstrab = async () => {
   const app = express();
-  const port = process.env.port || 5000;
+  const port = process.env.PORT || 3000;
 
   //
   app.use(cors());
