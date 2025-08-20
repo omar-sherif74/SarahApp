@@ -1,6 +1,7 @@
 import path from "node:path";
 import * as dotenv from "dotenv";
-dotenv.config({ path: path.join("./src/confing/.env.DEV") });
+// dotenv.config({ path: path.join("./src/config/.env.DEV") });
+dotenv.config({ });
 import authCOntroller from "./moduls/auth/auth.controller.js";
 import userCOntroller from "./moduls/user/user.controller.js";
 import messageCOntroller from "./moduls/message/message.controller.js";
@@ -18,7 +19,7 @@ const bootstrab = async () => {
   //
   app.use(cors());
   app.use(helmet())
-  app.use(morgan("dev"))
+  app.use(morgan('common'))
 
   const limiter = rateLimit({
     windowMs: 60 * 60 * 1000,
